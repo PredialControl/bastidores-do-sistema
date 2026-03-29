@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bastidores do Sistema - CPMI do INSS</title>
+<meta name="description" content="19 parlamentares blindaram 216 indiciados da CPMI do INSS. Veja quem votou contra, suas conexões e os documentos oficiais.">
+<meta property="og:title" content="Bastidores do Sistema - Quem blindou os indiciados da CPMI do INSS?">
+<meta property="og:description" content="19 parlamentares votaram contra o relatório que pedia 216 indiciamentos por fraudes bilionárias contra aposentados.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#09090b;--card:#18181b;--card-hover:#27272a;--border:#27272a;--border-light:#3f3f46;--text:#fafafa;--text-muted:#a1a1aa;--text-dim:#71717a;--accent:#ef4444;--accent-soft:rgba(239,68,68,.12);--green:#22c55e;--green-soft:rgba(34,197,94,.12);--blue:#3b82f6;--blue-soft:rgba(59,130,246,.12);--yellow:#eab308;--yellow-soft:rgba(234,179,8,.12);--purple:#a855f7;--purple-soft:rgba(168,85,247,.12);--orange:#f97316;--orange-soft:rgba(249,115,22,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(9,9,11,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 0}
+.nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
+.nav-brand span{color:var(--accent)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:.85rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+
+/* HERO */
+.hero{padding:120px 0 60px;text-align:center;background:radial-gradient(ellipse at 50% 0%,rgba(239,68,68,.08) 0%,transparent 60%);border-bottom:1px solid var(--border)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:13px;font-weight:600;margin-bottom:24px;letter-spacing:.5px}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:16px;background:linear-gradient(135deg,#fff 0%,#a1a1aa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:1.15rem;color:var(--text-muted);max-width:640px;margin:0 auto 40px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;max-width:800px;margin:0 auto}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.stat-number{font-size:2.5rem;font-weight:800;color:var(--accent)}
+.stat-label{font-size:.85rem;color:var(--text-muted);margin-top:4px}
+
+/* FILTER */
+.filter-section{padding:30px 0 20px;position:sticky;top:49px;z-index:100;background:rgba(9,9,11,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.filter-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.filter-btn{padding:7px 18px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+.filter-btn:hover{border-color:var(--text-dim);color:var(--text)}
+.filter-btn.active{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600}
+.search-input{padding:7px 18px;border-radius:100px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px;font-family:inherit;width:200px;outline:none}
+.search-input:focus{border-color:var(--accent)}
+.search-input::placeholder{color:var(--text-dim)}
+
+/* CARDS */
+.cards-section{padding:40px 0}
+.section-heading{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.section-heading h2{font-size:1.4rem;font-weight:700}
+.section-heading .count{background:var(--accent-soft);color:var(--accent);padding:2px 12px;border-radius:100px;font-size:13px;font-weight:600}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:16px}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s;cursor:pointer}
+.card:hover{border-color:var(--border-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.card-main{display:flex;gap:16px;align-items:flex-start;padding:24px}
+.card-photo{width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--border);background:var(--card-hover)}
+.card-initials{width:72px;height:72px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);color:var(--accent);font-size:1.4rem;font-weight:700;border:2px solid var(--border)}
+.card-info{flex:1;min-width:0}
+.card-name{font-size:1.05rem;font-weight:700;margin-bottom:3px}
+.card-role{font-size:.82rem;color:var(--text-muted);margin-bottom:8px}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.tag{display:inline-flex;padding:2px 10px;border-radius:100px;font-size:11px;font-weight:600}
+.tag-pt{background:var(--accent-soft);color:var(--accent)}
+.tag-psd{background:var(--blue-soft);color:var(--blue)}
+.tag-podemos{background:var(--green-soft);color:var(--green)}
+.tag-pcdob{background:var(--orange-soft);color:var(--orange)}
+.tag-pp{background:var(--blue-soft);color:var(--blue)}
+.tag-uniao{background:var(--yellow-soft);color:var(--yellow)}
+.tag-republicanos{background:var(--purple-soft);color:var(--purple)}
+.tag-avante{background:var(--green-soft);color:var(--green)}
+.tag-pdt{background:var(--yellow-soft);color:var(--yellow)}
+.tag-um{background:rgba(255,255,255,.06);color:var(--text-muted)}
+.card-vote{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:6px}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.card-x{display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);font-size:12px;text-decoration:none;transition:color .2s}
+.card-x:hover{color:var(--text)}
+.card-x svg{width:13px;height:13px}
+.card-expand-hint{font-size:11px;color:var(--text-dim);display:flex;align-items:center;gap:4px}
+.card-expand-hint svg{width:12px;height:12px;transition:transform .3s}
+.card.open .card-expand-hint svg{transform:rotate(180deg)}
+
+/* EXPANDED CONNECTION */
+.card-conexao{display:none;padding:0 24px 24px;border-top:1px solid var(--border);margin-top:0}
+.card.open .card-conexao{display:block}
+.conexao-content{padding-top:16px}
+.conexao-label{font-size:.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.conexao-text{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+.conexao-text strong{color:var(--text);font-weight:600}
+.conexao-text .hl{background:var(--accent-soft);color:var(--accent);padding:1px 8px;border-radius:4px;font-weight:600;font-size:.85em}
+.conexao-flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0;padding:12px;background:rgba(255,255,255,.02);border-radius:8px;border:1px solid var(--border)}
+.flow-node{background:var(--card-hover);border:1px solid var(--border-light);padding:4px 12px;border-radius:6px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.flow-arrow{color:var(--accent);font-size:1rem}
+.conexao-severity{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:6px;font-size:.75rem;font-weight:700;margin-top:10px}
+.severity-high{background:var(--accent-soft);color:var(--accent)}
+.severity-medium{background:var(--yellow-soft);color:var(--yellow)}
+.severity-low{background:var(--blue-soft);color:var(--blue)}
+
+/* DOCS SECTION */
+.docs-section{padding:60px 0;border-top:1px solid var(--border)}
+.docs-section h2{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:12px}
+.docs-subtitle{text-align:center;color:var(--text-muted);margin-bottom:40px;font-size:1rem}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.doc-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;text-decoration:none;transition:all .3s;display:block}
+.doc-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.doc-icon{font-size:2rem;margin-bottom:12px}
+.doc-title{font-weight:700;font-size:1rem;margin-bottom:6px;color:var(--text)}
+.doc-desc{font-size:.85rem;color:var(--text-muted);line-height:1.5}
+.doc-badge{display:inline-flex;padding:2px 10px;border-radius:100px;font-size:.75rem;font-weight:600;margin-top:10px;background:var(--accent-soft);color:var(--accent)}
+
+/* INDICIADOS */
+.indiciados-section{padding:60px 0;border-top:1px solid var(--border)}
+.indiciados-section h2{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:12px}
+.indiciados-subtitle{text-align:center;color:var(--text-muted);margin-bottom:16px}
+.indiciados-stats{text-align:center;margin-bottom:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.indiciados-stats .ist{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:6px 16px;font-size:.8rem;color:var(--text-muted)}
+.indiciados-stats .ist strong{color:var(--accent);font-weight:700}
+.indiciados-filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+.indiciados-filter-btn{padding:5px 14px;border-radius:100px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit}
+.indiciados-filter-btn:hover{border-color:var(--text-dim);color:var(--text)}
+.indiciados-filter-btn.active{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600}
+.indiciados-search{padding:5px 14px;border-radius:100px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:12px;font-family:inherit;width:180px;outline:none}
+.indiciados-search:focus{border-color:var(--accent)}
+.indiciados-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.indiciado-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s;cursor:pointer}
+.indiciado-card:hover{border-color:var(--border-light);transform:translateY(-1px)}
+.indiciado-card.dest{border-color:var(--accent-soft)}
+.indiciado-main{display:flex;gap:12px;align-items:center;padding:16px}
+.indiciado-initials{width:48px;height:48px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;border:2px solid var(--border)}
+.indiciado-initials.cat-nucleo{background:var(--accent-soft);color:var(--accent)}
+.indiciado-initials.cat-politico{background:var(--purple-soft);color:var(--purple)}
+.indiciado-initials.cat-inss{background:var(--blue-soft);color:var(--blue)}
+.indiciado-initials.cat-financeiro{background:var(--yellow-soft);color:var(--yellow)}
+.indiciado-initials.cat-operador{background:var(--orange-soft);color:var(--orange)}
+.indiciado-initials.cat-entidade{background:var(--green-soft);color:var(--green)}
+.indiciado-initials.cat-outro{background:rgba(255,255,255,.06);color:var(--text-muted)}
+.indiciado-info{flex:1;min-width:0}
+.indiciado-name{font-weight:700;font-size:.88rem;margin-bottom:2px}
+.indiciado-role{font-size:.78rem;color:var(--text-muted);margin-bottom:4px}
+.indiciado-tags{display:flex;gap:4px;flex-wrap:wrap}
+.indiciado-crime{font-size:.72rem;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:4px;display:inline-block}
+.indiciado-cat-tag{font-size:.68rem;padding:2px 8px;border-radius:4px;display:inline-block;font-weight:600;text-transform:uppercase}
+.cat-tag-nucleo{background:var(--accent-soft);color:var(--accent)}
+.cat-tag-politico{background:var(--purple-soft);color:var(--purple)}
+.cat-tag-inss{background:var(--blue-soft);color:var(--blue)}
+.cat-tag-financeiro{background:var(--yellow-soft);color:var(--yellow)}
+.cat-tag-operador{background:var(--orange-soft);color:var(--orange)}
+.cat-tag-entidade{background:var(--green-soft);color:var(--green)}
+.cat-tag-outro{background:rgba(255,255,255,.04);color:var(--text-dim)}
+.indiciado-expand{display:none;padding:0 16px 16px;border-top:1px solid var(--border)}
+.indiciado-card.open .indiciado-expand{display:block}
+.indiciado-expand-content{padding-top:12px;font-size:.82rem;color:var(--text-muted);line-height:1.6}
+.indiciado-expand-content strong{color:var(--text)}
+.indiciado-hint{font-size:10px;color:var(--text-dim);margin-left:auto;white-space:nowrap}
+
+/* TIMELINE */
+.timeline-section{padding:60px 0;border-top:1px solid var(--border)}
+.timeline-section h2{font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:40px}
+.timeline{max-width:700px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;padding-left:52px;margin-bottom:32px}
+.tl-dot{position:absolute;left:13px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl-date{font-size:.8rem;color:var(--accent);font-weight:700;margin-bottom:4px}
+.tl-text{font-size:.9rem;color:var(--text-muted)}
+.tl-text strong{color:var(--text)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:40px 0;text-align:center;color:var(--text-dim);font-size:.85rem}
+.footer p{margin-bottom:8px}
+.footer a{color:var(--text-muted);text-decoration:none}
+
+@media(max-width:640px){
+  .cards-grid{grid-template-columns:1fr}
+  .hero{padding:100px 0 40px}
+  .card-main{flex-direction:column;align-items:center;text-align:center}
+  .card-tags{justify-content:center}
+  .conexao-flow{justify-content:center}
+  .nav-links{display:none}
+  .docs-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="container">
+  <div class="nav-brand"><span>Bastidores</span> do Sistema</div>
+  <div class="nav-links">
+    <a href="#parlamentares">Parlamentares</a>
+    <a href="#documentos">Documentos</a>
+    <a href="#indiciados">Indiciados</a>
+    <a href="#timeline">Timeline</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<section class="hero" id="topo"><div class="container">
+  <div class="hero-badge">&#9888;&#65039; 28 DE MAR&Ccedil;O DE 2026</div>
+  <h1>Quem blindou os indiciados<br>da CPMI do INSS?</h1>
+  <p>19 parlamentares votaram contra o relat&oacute;rio final de 4.340 p&aacute;ginas que pedia o indiciamento de 216 pessoas envolvidas em fraudes bilion&aacute;rias contra aposentados e pensionistas do INSS.</p>
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-number">19</div><div class="stat-label">Votos contra</div></div>
+    <div class="stat"><div class="stat-number">216</div><div class="stat-label">Indiciamentos bloqueados</div></div>
+    <div class="stat"><div class="stat-number">R$701mi</div><div class="stat-label">Em fraudes investigadas</div></div>
+    <div class="stat"><div class="stat-number">4.340</div><div class="stat-label">P&aacute;ginas do relat&oacute;rio</div></div>
+  </div>
+</div></section>
+
+<!-- FILTROS -->
+<section class="filter-section" id="parlamentares"><div class="container">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCards('todos')">Todos (19)</button>
+    <button class="filter-btn" onclick="filterCards('senador')">Senadores (9)</button>
+    <button class="filter-btn" onclick="filterCards('deputado')">Deputados (10)</button>
+    <button class="filter-btn" onclick="filterCards('pt')">PT (13)</button>
+    <button class="filter-btn" onclick="filterCards('outros')">Outros (6)</button>
+    <input type="text" class="search-input" placeholder="Buscar..." oninput="searchCards(this.value)">
+  </div>
+</div></section>
+
+<!-- CARDS (gerados via JS) -->
+<section class="cards-section"><div class="container">
+  <div class="section-heading"><h2>Senadores</h2><span class="count">9</span></div>
+  <div class="cards-grid" id="senadores-grid"></div>
+  <div class="section-heading" style="margin-top:48px"><h2>Deputados Federais</h2><span class="count">10</span></div>
+  <div class="cards-grid" id="deputados-grid"></div>
+</div></section>
+
+<!-- DOCUMENTOS -->
+<section class="docs-section" id="documentos"><div class="container">
+  <h2>Documentos Oficiais</h2>
+  <p class="docs-subtitle">Acesse o relat&oacute;rio, atas e documentos p&uacute;blicos da CPMI</p>
+  <div class="docs-grid">
+    <a class="doc-card" href="https://www.poder360.com.br/poder-congresso/leia-a-integra-do-relatorio-final-da-cpmi-do-inss/" target="_blank">
+      <div class="doc-icon">&#128220;</div>
+      <div class="doc-title">Relat&oacute;rio Final - &Iacute;ntegra</div>
+      <div class="doc-desc">Relat&oacute;rio completo do relator Alfredo Gaspar (Uni&atilde;o-AL) com 4.340 p&aacute;ginas e 216 pedidos de indiciamento.</div>
+      <div class="doc-badge">4.340 p&aacute;ginas &middot; PDF</div>
+    </a>
+    <a class="doc-card" href="https://legis.senado.leg.br/atividade/comissoes/comissao/2794/" target="_blank">
+      <div class="doc-icon">&#127963;&#65039;</div>
+      <div class="doc-title">P&aacute;gina Oficial da CPMI</div>
+      <div class="doc-desc">Portal do Senado Federal com toda a documenta&ccedil;&atilde;o oficial, composi&ccedil;&atilde;o e atividades da CPMI.</div>
+      <div class="doc-badge">Senado Federal</div>
+    </a>
+    <a class="doc-card" href="https://legis.senado.leg.br/atividade/comissoes/comissao/2794/documentos-recebidos" target="_blank">
+      <div class="doc-icon">&#128193;</div>
+      <div class="doc-title">Documentos Recebidos</div>
+      <div class="doc-desc">Todos os documentos entregues &agrave; CPMI durante 7 meses de investiga&ccedil;&atilde;o.</div>
+      <div class="doc-badge">Documentos oficiais</div>
+    </a>
+    <a class="doc-card" href="https://legis.senado.leg.br/atividade/comissoes/comissao/2794/requerimentos-cpi" target="_blank">
+      <div class="doc-icon">&#128203;</div>
+      <div class="doc-title">Requerimentos da CPMI</div>
+      <div class="doc-desc">Requerimentos de quebra de sigilo, convoca&ccedil;&otilde;es e solicita&ccedil;&otilde;es feitas pela comiss&atilde;o.</div>
+      <div class="doc-badge">Requerimentos</div>
+    </a>
+    <a class="doc-card" href="https://legis.senado.leg.br/atividade/comissoes/comissao/2794/audiencias" target="_blank">
+      <div class="doc-icon">&#127908;</div>
+      <div class="doc-title">Audi&ecirc;ncias P&uacute;blicas</div>
+      <div class="doc-desc">36 depoentes ouvidos em 38 reuni&otilde;es ao longo de 7 meses de trabalho.</div>
+      <div class="doc-badge">38 reuni&otilde;es</div>
+    </a>
+    <a class="doc-card" href="https://www.poder360.com.br/poder-flash/leia-a-integra-do-relatorio-alternativo-do-cpi-do-inss/" target="_blank">
+      <div class="doc-icon">&#128196;</div>
+      <div class="doc-title">Relat&oacute;rio Alternativo (PT)</div>
+      <div class="doc-desc">Relat&oacute;rio alternativo apresentado pela base governista durante a vota&ccedil;&atilde;o.</div>
+      <div class="doc-badge">Vers&atilde;o alternativa</div>
+    </a>
+  </div>
+</div></section>
+
+<!-- INDICIADOS -->
+<section class="indiciados-section" id="indiciados"><div class="container">
+  <h2>Os 216 Indiciados Blindados</h2>
+  <p class="indiciados-subtitle">Lista completa dos nomes que escaparam do indiciamento formal. Clique em cada card para ver detalhes.</p>
+  <div class="indiciados-stats" id="indiciados-stats"></div>
+  <div class="indiciados-filter-bar">
+    <button class="indiciados-filter-btn active" onclick="filterIndiciados('todos')">Todos</button>
+    <button class="indiciados-filter-btn" onclick="filterIndiciados('nucleo')">N&uacute;cleo Central</button>
+    <button class="indiciados-filter-btn" onclick="filterIndiciados('politico')">Pol&iacute;ticos</button>
+    <button class="indiciados-filter-btn" onclick="filterIndiciados('inss')">INSS/Dataprev</button>
+    <button class="indiciados-filter-btn" onclick="filterIndiciados('financeiro')">Financeiro</button>
+    <button class="indiciados-filter-btn" onclick="filterIndiciados('operador')">Operadores</button>
+    <button class="indiciados-filter-btn" onclick="filterIndiciados('outro')">Outros</button>
+    <input type="text" class="indiciados-search" placeholder="Buscar indiciado..." oninput="searchIndiciados(this.value)">
+  </div>
+  <div class="indiciados-grid" id="indiciados-grid"></div>
+</div></section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline"><div class="container">
+  <h2>Linha do Tempo</h2>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Agosto 2025</div><div class="tl-text"><strong>CPMI instalada</strong> para investigar fraudes no INSS envolvendo cr&eacute;dito consignado e desvio de recursos de aposentados.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Ago 2025 - Mar 2026</div><div class="tl-text"><strong>38 reuni&otilde;es e 36 depoentes</strong> ouvidos ao longo de 7 meses, incluindo empres&aacute;rios, lobistas, dirigentes do INSS e intermedi&aacute;rios.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">27 de Mar&ccedil;o de 2026</div><div class="tl-text">Relator <strong>Alfredo Gaspar</strong> apresenta relat&oacute;rio final de <strong>4.340 p&aacute;ginas</strong> pedindo indiciamento de 216 pessoas, incluindo Lulinha e Daniel Vorcaro.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">28 de Mar&ccedil;o de 2026</div><div class="tl-text"><strong>Jaques Wagner voa de Salvador a Bras&iacute;lia</strong> em car&aacute;ter de urg&ecirc;ncia para garantir qu&oacute;rum. Madrugada: relat&oacute;rio <strong>rejeitado por 19 a 12</strong>. CPMI encerra sem relat&oacute;rio final aprovado.</div></div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<section class="footer"><div class="container">
+  <p><strong>Bastidores do Sistema</strong></p>
+  <p>Fonte: Vota&ccedil;&atilde;o da CPMI do INSS &mdash; 28 de mar&ccedil;o de 2026 &middot; Senado Federal</p>
+  <p style="margin-top:16px">P&aacute;gina de documenta&ccedil;&atilde;o p&uacute;blica e transpar&ecirc;ncia pol&iacute;tica</p>
+  <p style="margin-top:8px"><a href="#topo">&uarr; Voltar ao topo</a></p>
+</div></section>
+
+<script>
+const X_SVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+const CHEVRON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+
+const PARLAMENTARES=[
+  // SENADORES
+  {n:"Soraya Thronicke",p:"Podemos",tp:"podemos",uf:"MS",c:"Senadora",x:"SorayaThronicke",f:5988,tipo:"senador",
+   conexao:{severity:"medium",label:"ALINHAMENTO ESTRAT\u00c9GICO",text:'Apesar de n\u00e3o ser da base governista, <strong>Soraya Thronicke</strong> votou contra o relat\u00f3rio numa demonstra\u00e7\u00e3o de alinhamento estrat\u00e9gico. A senadora tem buscado reaproxima\u00e7\u00e3o pol\u00edtica com o governo Lula desde 2024.'}},
+  {n:"Randolfe Rodrigues",p:"PT",tp:"pt",uf:"AP",c:"Senador \u00b7 L\u00edder do Gov. no Congresso",x:"randolfeap",f:5012,tipo:"senador",
+   conexao:{severity:"high",label:"LIDERAN\u00c7A DA ARTICULA\u00c7\u00c3O",text:'<strong>Randolfe Rodrigues</strong>, L\u00edder do Governo no Congresso, articulou ativamente a rejei\u00e7\u00e3o do relat\u00f3rio para proteger aliados do governo, incluindo <strong>Carlos Lupi</strong> (ex-Ministro) e <strong>Alessandro Stefanutto</strong> (ex-presidente do INSS), ambos indiciados.'}},
+  {n:"Jaques Wagner",p:"PT",tp:"pt",uf:"BA",c:"Senador \u00b7 L\u00edder do Gov. no Senado",x:"jaqueswagner",f:581,tipo:"senador",
+   conexao:{severity:"high",label:"CONEX\u00c3O DIRETA COM BANCO MASTER",text:'<strong>Jaques Wagner</strong> fez pedido direto para que <strong>Daniel Vorcaro</strong> (indiciado, dono do Banco Master) contratasse <strong>Guido Mantega</strong> como consultor com sal\u00e1rio de <span class="hl">R$ 1 milh\u00e3o/m\u00eas</span>. Voou de Salvador a Bras\u00edlia em urg\u00eancia para garantir qu\u00f3rum na vota\u00e7\u00e3o.',
+    flow:["Jaques Wagner","Pediu contrata\u00e7\u00e3o","Guido Mantega","R$ 1mi/m\u00eas","Daniel Vorcaro","Banco Master"]}},
+  {n:"Eliziane Gama",p:"PSD",tp:"psd",uf:"MA",c:"Senadora",x:"elizianegama",f:5718,tipo:"senador",
+   conexao:{severity:"high",label:"TROCA DE APOIO POL\u00cdTICO",text:'Lula declarou publicamente que <strong>Eliziane Gama</strong> era "minha candidata", apoiando sua reelei\u00e7\u00e3o no Maranh\u00e3o. Ao votar contra, blindou <strong>Lulinha</strong> (F\u00e1bio Lu\u00eds Lula da Silva) de indiciamento por suposta participa\u00e7\u00e3o no esquema de fraudes.'}},
+  {n:"Humberto Costa",p:"PT",tp:"pt",uf:"PE",c:"Senador",x:"senadorhumberto",f:5008,tipo:"senador",
+   conexao:{severity:"medium",label:"PROTE\u00c7\u00c3O AO GOVERNO",text:'<strong>Humberto Costa</strong>, senador do PT, votou para blindar indiciados do governo incluindo <strong>Carlos Lupi</strong> (ex-Ministro da Previd\u00eancia) e <strong>Alessandro Stefanutto</strong> (ex-presidente INSS), que ignoraram alertas de fraudes contra aposentados.'}},
+  {n:"Jussara Lima",p:"PSD",tp:"psd",uf:"PI",c:"Senadora",x:"JussaraLimaPI",f:6369,tipo:"senador",
+   conexao:{severity:"medium",label:"BASE ALIADA",text:'<strong>Jussara Lima</strong> (PSD-PI), parte da coaliz\u00e3o governista, votou alinhada com a orienta\u00e7\u00e3o do governo para rejeitar o relat\u00f3rio que indiciava aliados pol\u00edticos do Planalto.'}},
+  {n:"Rog\u00e9rio Carvalho",p:"PT",tp:"pt",uf:"SE",c:"Senador",x:"SenadorRogerio",f:5352,tipo:"senador",
+   conexao:{severity:"medium",label:"PROTE\u00c7\u00c3O AO GOVERNO",text:'<strong>Rog\u00e9rio Carvalho</strong> (PT-SE) votou para blindar o indiciamento de <strong>Carlos Lupi</strong> e demais aliados do governo investigados pela CPMI.'}},
+  {n:"Augusta Brito",p:"PT",tp:"pt",uf:"CE",c:"Senadora",x:"augustabritoce",f:6350,tipo:"senador",
+   conexao:{severity:"medium",label:"PROTE\u00c7\u00c3O AO GOVERNO",text:'<strong>Augusta Brito</strong> (PT-CE) seguiu a orienta\u00e7\u00e3o governista, blindando ex-ministros e dirigentes do INSS ligados ao esquema de fraudes bilion\u00e1rias.'}},
+  {n:"Teresa Leit\u00e3o",p:"PT",tp:"pt",uf:"PE",c:"Senadora",x:"teresaleitao_",f:6338,tipo:"senador",
+   conexao:{severity:"medium",label:"PROTE\u00c7\u00c3O AO GOVERNO",text:'<strong>Teresa Leit\u00e3o</strong> (PT-PE) votou contra o relat\u00f3rio que indiciava <strong>Lulinha</strong>, <strong>Carlos Lupi</strong> e outros 214 envolvidos nas fraudes contra aposentados do INSS.'}},
+
+  // DEPUTADOS
+  {n:"Meire Serafim",p:"Uni\u00e3o Brasil",tp:"uniao",uf:"AC",c:"Deputada Federal",x:"depmeireserafim",f:220591,tipo:"deputado",cam:true,
+   conexao:{severity:"medium",label:"EMENDAS QUESTION\u00c1VEIS",text:'<strong>Meire Serafim</strong> (Uni\u00e3o-AC) destinou <span class="hl">R$ 20,07 milh\u00f5es</span> em emendas parlamentares a uma ONG da Bahia para projetos no Acre \u2014 padr\u00e3o que lembra mecanismos de desvio investigados na CPMI.'}},
+  {n:"\u00c1tila Lira",p:"PP",tp:"pp",uf:"PI",c:"Deputado Federal",x:"deputadoatila",f:74459,tipo:"deputado",cam:true,
+   conexao:{severity:"low",label:"BASE ALIADA",text:'<strong>\u00c1tila Lira</strong> (PP-PI), parte da coaliz\u00e3o governista, votou alinhado com a orienta\u00e7\u00e3o do governo para rejeitar o relat\u00f3rio final.'}},
+  {n:"Orlando Silva",p:"PCdoB",tp:"pcdob",uf:"SP",c:"Deputado Federal",x:"orlandosilva",f:178987,tipo:"deputado",cam:true,
+   conexao:{severity:"medium",label:"COALIZ\u00c3O GOVERNISTA",text:'<strong>Orlando Silva</strong> (PCdoB-SP), partido aliado hist\u00f3rico do PT na coaliz\u00e3o governista, votou para blindar os indiciados ligados ao governo Lula.'}},
+  {n:"Rog\u00e9rio Correia",p:"PT",tp:"pt",uf:"MG",c:"Deputado Federal",x:"RogerioCorreia_",f:204480,tipo:"deputado",cam:true,
+   conexao:{severity:"medium",label:"PROTE\u00c7\u00c3O AO GOVERNO",text:'<strong>Rog\u00e9rio Correia</strong> (PT-MG) votou contra o relat\u00f3rio que indiciava aliados do governo, protegendo <strong>Lulinha</strong> e ex-ministros.'}},
+  {n:"Ricardo Ayres",p:"Republicanos",tp:"republicanos",uf:"TO",c:"Deputado Federal",x:"RicardoAyres_TO",f:220543,tipo:"deputado",cam:true,
+   conexao:{severity:"low",label:"VOTO ESTRAT\u00c9GICO",text:'<strong>Ricardo Ayres</strong> (Republicanos-TO) votou contra o relat\u00f3rio em alinhamento com negocia\u00e7\u00f5es da coaliz\u00e3o governista no Congresso.'}},
+  {n:"Alencar Santana",p:"PT",tp:"pt",uf:"SP",c:"Deputado Federal",x:"AlencarBraga13",f:204501,tipo:"deputado",cam:true,
+   conexao:{severity:"high",label:"CONTAS IRREGULARES",text:'<strong>Alencar Santana</strong> (PT-SP) teve contas de campanha de 2022 <span class="hl">desaprovadas pelo TRE-SP</span> com irregularidades de 54,35% das receitas. Determinado recolhimento de R$ 339.881,12 ao Tesouro. Parlamentar com hist\u00f3rico de irregularidades financeiras votou contra relat\u00f3rio sobre fraudes financeiras.'}},
+  {n:"Paulo Pimenta",p:"PT",tp:"pt",uf:"RS",c:"Deputado Federal",x:"Pimenta13Br",f:74400,tipo:"deputado",cam:true,
+   conexao:{severity:"high",label:"CONTRADI\u00c7\u00c3O: DENUNCIOU E BLINDOU",text:'<strong>Paulo Pimenta</strong> (PT-RS) denunciou o esquema "Bolsomaster" apontando conex\u00f5es do Banco Master com Bolsonaro, mas votou contra o relat\u00f3rio que indiciava o pr\u00f3prio <strong>Daniel Vorcaro</strong> (dono do Master) \u2014 <span class="hl">seletividade pol\u00edtica</span>: denuncia quando conv\u00e9m, blinda quando amea\u00e7a aliados.'}},
+  {n:"Lindbergh Farias",p:"PT",tp:"pt",uf:"RJ",c:"Deputado Federal",x:"lindberghfarias",f:74858,tipo:"deputado",cam:true,
+   conexao:{severity:"high",label:"OBSTRU\u00c7\u00c3O ATIVA",text:'<strong>Lindbergh Farias</strong> (PT-RJ) entrou em confronto direto com o relator <strong>Alfredo Gaspar</strong> durante a sess\u00e3o, atuando na obstru\u00e7\u00e3o dos trabalhos e articula\u00e7\u00e3o ativa dos votos contra o relat\u00f3rio final.'}},
+  {n:"Neto Carletto",p:"Avante",tp:"avante",uf:"BA",c:"Deputado Federal",x:"CarlettoNeto",f:220703,tipo:"deputado",cam:true,
+   conexao:{severity:"low",label:"BASE ALIADA",text:'<strong>Neto Carletto</strong> (Avante-BA), parte do bloco governista, votou alinhado com a orienta\u00e7\u00e3o do Planalto.'}},
+  {n:"Dorinaldo Malafaia",p:"PDT",tp:"pdt",uf:"AP",c:"Deputado Federal",x:"malafaia_d",f:220573,tipo:"deputado",cam:true,
+   conexao:{severity:"medium",label:"PARTIDO DE CARLOS LUPI",text:'<strong>Dorinaldo Malafaia</strong> (PDT-AP) \u00e9 do mesmo partido de <strong>Carlos Lupi</strong>, ex-Ministro da Previd\u00eancia indiciado por prevarica\u00e7\u00e3o e omiss\u00e3o. Votou para proteger diretamente o l\u00edder do seu pr\u00f3prio partido.'}}
+];
+
+const INDICIADOS_FULL = [
+  { n: "Abraão Lincoln Ferreira da Cruz", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Adeilson Silveira Hora", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Adelino Rodrigues Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ademir Fratric Bacic", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Adroaldo da Cunha Portal", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Alan do Nascimento Santos", cat: "inss", r: "Diretor de Relacionamento/Negócios da Dataprev", cr: "Corrupção, facilitação de fraudes", dest: true },
+  { n: "Aldo Luiz Ferreira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Aleano de Souza Guardachoni", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Alessandro Antônio Stefanutto", cat: "inss", r: "Ex-presidente do INSS", cr: "Gestão fraudulenta, corrupção", dest: true },
+  { n: "Alexandre Caetano dos Reis", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Alexandre Eduardo Ferreira Lopes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Alexandre Guimarães", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Alexandre Moreira da Silva", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Alexsandro Prado Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Américo Monte", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Américo Monte Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Anderson Cordeiro de Vasconcelos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Anderson Ladeira Viana", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Anderson Pomini", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "André Luís Alves Guimarães", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "André Luiz Martins Dias", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "André Paulo Félix Fidelis", cat: "inss", r: "Ex-diretor de Benefícios do INSS", cr: "Corrupção, fraude em benefícios", dest: true },
+  { n: "Andrei José Braga Mendes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Anne Carolline Willians Vieira Rodrigues", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Antenor de Sousa Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Antônio Araújo da Gama", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Antonio Carlos Camilo Antunes", cat: "nucleo", r: "Líder/Operador central do esquema (Careca do INSS)", cr: "Organização criminosa, estelionato contra aposentados, lavagem de dinheiro", dest: true },
+  { n: "Antônio Lúcio Caetano Margarido", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Aristides Veras dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Banco Master", cat: "entidade", r: "Instituição financeira (Daniel Vorcaro)", cr: "Facilitação de lavagem de dinheiro", dest: false },
+  { n: "Brenda Aguiar Soares", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Bruna Braz de Souza Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Carlos Afonso Galleti Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Carlos Alexandre Alvarenga", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Carlos Henrique da Rocha Gonçalves", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Carlos Roberto Ferreira Lopes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Carlos Roberto Lupi", cat: "politico", r: "Ex-Ministro da Previdência Social (PDT)", cr: "Prevaricação, omissão", dest: true },
+  { n: "Cecília Montalvão Simões", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Cecilia Rodrigues Mota", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Cecílio Barbosa Cintra Galvão", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Celso Steremberg", cat: "financeiro", r: "Setor financeiro", cr: "Intermediação de fraudes", dest: false },
+  { n: "Charles Góes Freitas", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Cícero Vasconcelos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Cicero Marcelino de Souza Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Cleber Oliveira Medeiros", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Cristiana Alcântara Alves Zago", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Daniel Dirani", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Daniel Gerber", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Daniel Orsini de Azevedo", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Daniel Simas", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Daniel Vorcaro", cat: "financeiro", r: "Proprietário do Banco Master", cr: "Lavagem de dinheiro", dest: true },
+  { n: "Danielle Miranda Fonteles", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Danilo Berndt Trento", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Daugliesi Giacomasi Souza", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Davi de Vasconcelos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Dennys Bergkamp Pontes de Sousa Alves", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Diego Luiz Nobre Barros", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Dogival José dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Domingos Sávio de Castro", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Durval Natário Tosta IV", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Edson Akio Yamada", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Edson Cunha de Araújo", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Eduardo Freire Delmont", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Eduardo Silva Portal", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Elano Gil Carvalho Xavier", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Emanuel Pinheiro da Silva", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Eric Douglas Martins Fidelis", cat: "operador", r: "Empresário, filho de André Paulo Félix Fidelis", cr: "Fraude, facilitação de crimes", dest: false },
+  { n: "Euclydes Marcos Pettersen Neto", cat: "politico", r: "Deputado Federal (Republicanos-MG)", cr: "Envolvimento em fraudes, corrupção", dest: true },
+  { n: "Fábio Luís Lula da Silva", cat: "politico", r: "Empresário (filho do presidente)", cr: "Organização criminosa, lavagem de dinheiro", dest: true },
+  { n: "Felipe Macedo Gomes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Felipe Vasconcelos Pereira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Fernando Pereira dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Fernando dos Santos Andrade Cavalcanti", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Francisco Roumes Rodrigues de Aguiar", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Francisco Wesley Nascimento dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Giovani Batista Fassarella Spiecker", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Giovanini Cardoso", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Gilmar Stelo", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Glauco André Fonseca Wamburg", cat: "inss", r: "Ex-presidente do INSS", cr: "Gestão fraudulenta, corrupção", dest: true },
+  { n: "Glauco Daniel Ribas Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Guilherme Gastaldello Pinheiro Serrano", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Gustavo Marques Gaspar", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Gutemberg Tito de Sousa", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Hamilton Souza", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Haran Santhiago Girão Sampaio", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Heitor Souza Cunha", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Hélio Marcelino Loreno", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Helionay Rodrigues de Sousa", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Herbert Kristensson Menocchi", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Higor Dalle Vedove Lourenção", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Igor Dias Delecrode", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Igor Oliveira Freitas", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ina Maria Lima da Silva", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ingrid Ambrózio Camilo", cat: "operador", r: "Intermediária", cr: "Facilitação de fraudes", dest: false },
+  { n: "Ingrid Pikinskeni Morais Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ivaldo Carvalho Silveira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ivânio da Rocha Oliveira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Janete Pereira Lima", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Jerônimo Arlindo da Silva Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Joab Félix de Medeiros", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Joana Gonçalves Vargas", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "João Carlos Camargo Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "João Milton Carneiro Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Jobson de Paiva Silveira Sales", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Jonathan de Souza Almeida", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Arnaldo Bezerra Guimarães", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Branco Garcia", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Carlos Oliveira", cat: "politico", r: "Ex-Ministro do Trabalho/Ex-presidente INSS", cr: "Gestão fraudulenta, corrupção", dest: true },
+  { n: "José Cordeiro de Vasconcelos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Fernando Costa dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Laudenor da Silva", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Lins de Alencar Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "José Sarney Filho", cat: "politico", r: "Político", cr: "Envolvimento em fraudes", dest: true },
+  { n: "José Silva Miguel Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Jucimar Fonseca da Silva", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Leandro Fagner da Fonseca Alves", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Leonardo Cerquinho Monteiro", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Leonardo Rolim", cat: "inss", r: "Ex-presidente do INSS", cr: "Gestão fraudulenta, corrupção", dest: true },
+  { n: "Lucas Fonseca da Silva", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Lucineide dos Santos Oliveira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Luís Lima Martins", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Marci Eustáquio Teodoro", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Márcio Alaor de Araújo", cat: "financeiro", r: "Setor bancário", cr: "Intermediação de fraudes", dest: false },
+  { n: "Marco Aurélio Gomes Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Marcos Brito Campos Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Marcos dos Santos Monte", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Marcus Vinicius Paranhos Faleiro", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Maria Eudenes dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Maria Eunice Ribas", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Maria das Graças Ferraz", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Maria Gorete Pereira", cat: "politico", r: "Deputada Federal (MDB-CE)", cr: "Envolvimento em fraudes", dest: true },
+  { n: "Maria Luzimar Rocha Lopes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Maria Paula Xavier da Fonseca Oliveira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Maria do Socorro Veras dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Mauricio Camisotti", cat: "nucleo", r: "Empresário, operador das fraudes", cr: "Organização criminosa, estelionato, lavagem de dinheiro", dest: true },
+  { n: "Mauro Palombo Concílio", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Micael Ferrone Alves Pereira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Milton Baptista de Souza Filho", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Milton Salvador de Almeida Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Mônica Ribeiro Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Natal Leo", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Natal Leo Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Natjo de Lima Pinheiro", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Nelmar de Castro Batista", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Nelson Wilians Fratoni Rodrigues", cat: "operador", r: "Advogado/empresário", cr: "Intermediação legal de fraudes", dest: false },
+  { n: "Nilton Claudio Carvalho Belsarena", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Nivaldo de Farias", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Paulo Afonso Aguiar Regadas Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Paulo Augusto de Araujo Boudens", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Paulo Cesar Roxo Ramos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Paulo Gabriel Negreiros", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Paulo Otávio Montalvão Camisotti", cat: "nucleo", r: "Operador, ligado a Mauricio Camisotti", cr: "Organização criminosa, lavagem de dinheiro", dest: true },
+  { n: "Pedro Alves Corrêa Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Pedro Lettieri Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Pedro Lucas Felix Canuto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Pedro Oliveira de Queiroz", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Philipe Roters Coutinho", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Philippe André Lemos Szymanowski", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rafael Emrich Candelot", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Raphael Maciel Snoeck", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rayama Belmonte Riella", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Reinaldo Carlos Barroso de Almeida", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Renan Assunção Siqueira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Renata Martins Costa de Siqueira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ricardo Bimbo Troccoli", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ricardo Vinícius Campelo de Sá", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Roberta Moreira Luchsinger", cat: "operador", r: "Intermediária, associada a Lulinha", cr: "Recebimento de recursos ilícitos, lavagem de dinheiro", dest: true },
+  { n: "Roberto Marinho Luiz da Rocha", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rodrigo Alves de França", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rodrigo Moraes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rodrigo Ortiz D'Avila Assumpção", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rogério Soares de Souza", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Romeu Carvalho Antunes", cat: "nucleo", r: "Filho do Careca do INSS", cr: "Envolvimento em esquema de fraudes", dest: true },
+  { n: "Ronaldo Ribeiro Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Ronaldo de Souza Estrella", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Rubens Oliveira Costa", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Samuel Chrisóstomo do Bomfim Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Sandra Helena Lima do Nascimento", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Sandro Temer De Oliveira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Sebastião Faustino de Paula", cat: "inss", r: "Ex-diretor de Benefícios do INSS", cr: "Corrupção, fraude em benefícios", dest: true },
+  { n: "Sérgio Cheque Bernardo", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Silas Bezerra de Alencar", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Silas da Costa Vaz", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Silvanete de Jesus Ribeiro", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Sílvio Roberto Machado Feitoza", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Suelen Ribeiro dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Taline Nunes Campos Neves", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Tânia Carvalho dos Santos", cat: "nucleo", r: "Esposa do Careca do INSS", cr: "Envolvimento em esquema de fraudes", dest: true },
+  { n: "Teresa Raquel Barbosa", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Thaisa Hoffmann Jonasson", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Thayse Daniela Silva Carvalho do Nascimento", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Thamiris Januário Mattos Snoeck", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Thamyrez Maia de Oliveira Ramos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Thiago Henrique Paranhos Carvalho", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Thiago Rocha Guimarães", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Tiago Abraão Ferreira Lopes", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Tiago Schettini Batista", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Tônia Andrea Inocentini Galleti", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Vanderlei Barbosa dos Santos", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Vanessa Barramacher Tocantins", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Victor Infante Aiello", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Vinicius Faleiros Martins", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Vinícius Ramos da Cruz", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Virgílio Antônio Ribeiro de Oliveira Filho", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Vitor Luís Spilla Antevere", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Vladimir Augusto de Oliveira Formiga", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Wagner Ferreira Moita", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Waldemar Monte Neto", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Walton Cardoso Lima Júnior", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Weverton Rocha Marques de Souza", cat: "politico", r: "Senador (PDT-MA)", cr: "Envolvimento em fraudes", dest: true },
+  { n: "Wilson Alexandre Sartin Panacione", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Wilson de Morais Gaby", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Yasmin Ahmed Hatheyer Oliveira", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false },
+  { n: "Zacarias Canuto Sobrinho", cat: "outro", r: "Investigado", cr: "Envolvimento no esquema de fraudes", dest: false }
+];
+
+function makeCard(d,i){
+  const foto=d.cam?`https://www.camara.leg.br/internet/deputado/bandep/${d.f}.jpg`:`https://legis.senado.leg.br/senadores/fotos-oficiais/${d.f}`;
+  const ini=d.n.split(' ').filter((_,j,a)=>j===0||j===a.length-1).map(w=>w[0]).join('');
+  const sev=d.conexao.severity;
+  const sevClass=sev==='high'?'severity-high':sev==='medium'?'severity-medium':'severity-low';
+  const sevLabel=sev==='high'?'\ud83d\udd34 ALTA GRAVIDADE':sev==='medium'?'\ud83d\udfe1 M\u00c9DIA GRAVIDADE':'\ud83d\udfe2 ALINHAMENTO';
+  let flowHtml='';
+  if(d.conexao.flow){
+    flowHtml='<div class="conexao-flow">'+d.conexao.flow.map((node,j)=>j>0?'<span class="flow-arrow">\u2192</span><span class="flow-node">'+node+'</span>':'<span class="flow-node">'+node+'</span>').join('')+'</div>';
+  }
+  return `<div class="card" data-tipo="${d.tipo}" data-partido="${d.tp}" data-nome="${d.n}" onclick="this.classList.toggle('open')">
+    <div class="card-main">
+      <img class="card-photo" src="${foto}" alt="${d.n}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="card-initials" style="display:none">${ini}</div>
+      <div class="card-info">
+        <div class="card-name">${d.n}</div>
+        <div class="card-role">${d.c}</div>
+        <div class="card-tags"><span class="tag tag-${d.tp}">${d.p}</span><span class="tag tag-uf">${d.uf}</span></div>
+        <div class="card-vote">\u274c CONTRA o relat\u00f3rio</div>
+        <div class="card-bottom">
+          <a class="card-x" href="https://x.com/${d.x}" target="_blank" onclick="event.stopPropagation()">${X_SVG} @${d.x}</a>
+          <span class="card-expand-hint">Ver liga\u00e7\u00f5es ${CHEVRON}</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-conexao"><div class="conexao-content">
+      <div class="conexao-label">${d.conexao.label}</div>
+      <div class="conexao-text">${d.conexao.text}</div>
+      ${flowHtml}
+      <div class="conexao-severity ${sevClass}">${sevLabel}</div>
+    </div></div>
+  </div>`;
+}
+
+// Render cards
+document.getElementById('senadores-grid').innerHTML=PARLAMENTARES.filter(d=>d.tipo==='senador').map(makeCard).join('');
+document.getElementById('deputados-grid').innerHTML=PARLAMENTARES.filter(d=>d.tipo==='deputado').map(makeCard).join('');
+
+// Render indiciados
+const CAT_LABELS={nucleo:'N\u00facleo Central',politico:'Pol\u00edtico',inss:'INSS/Dataprev',financeiro:'Financeiro',operador:'Operador',entidade:'Entidade',outro:'Investigado'};
+function makeIndCard(d){
+  const ini=d.n.split(' ').filter((_,j,a)=>j===0||j===a.length-1).map(w=>w[0]).join('');
+  return `<div class="indiciado-card ${d.dest?'dest':''}" data-cat="${d.cat}" data-nome="${d.n}" onclick="this.classList.toggle('open')">
+    <div class="indiciado-main">
+      <div class="indiciado-initials cat-${d.cat}">${ini}</div>
+      <div class="indiciado-info">
+        <div class="indiciado-name">${d.n}</div>
+        <div class="indiciado-role">${d.r}</div>
+        <div class="indiciado-tags">
+          <span class="indiciado-cat-tag cat-tag-${d.cat}">${CAT_LABELS[d.cat]||d.cat}</span>
+          <span class="indiciado-crime">${d.cr}</span>
+        </div>
+      </div>
+      <span class="indiciado-hint">${CHEVRON}</span>
+    </div>
+    <div class="indiciado-expand"><div class="indiciado-expand-content">
+      <strong>Nome:</strong> ${d.n}<br>
+      <strong>Fun\u00e7\u00e3o:</strong> ${d.r}<br>
+      <strong>Crimes imputados:</strong> ${d.cr}<br>
+      <strong>Categoria:</strong> ${CAT_LABELS[d.cat]||d.cat}<br>
+      ${d.dest?'<br><em>Figura de destaque no relat\u00f3rio da CPMI.</em>':'<br><em>Consta na lista de 216 pedidos de indiciamento do relat\u00f3rio final da CPMI do INSS (Alfredo Gaspar, 27/03/2026).</em>'}
+    </div></div>
+  </div>`;
+}
+// Stats
+const catCounts={};
+INDICIADOS_FULL.forEach(d=>{catCounts[d.cat]=(catCounts[d.cat]||0)+1;});
+document.getElementById('indiciados-stats').innerHTML=
+  `<span class="ist"><strong>${INDICIADOS_FULL.length}</strong> Total</span>`+
+  Object.entries(CAT_LABELS).filter(([k])=>catCounts[k]).map(([k,v])=>`<span class="ist"><strong>${catCounts[k]}</strong> ${v}</span>`).join('');
+// Render
+document.getElementById('indiciados-grid').innerHTML=INDICIADOS_FULL.map(makeIndCard).join('');
+
+function filterIndiciados(cat){
+  document.querySelectorAll('.indiciados-filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.indiciado-card').forEach(c=>{
+    c.style.display=(cat==='todos'||c.dataset.cat===cat)?'':'none';
+  });
+}
+function searchIndiciados(term){
+  term=term.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  document.querySelectorAll('.indiciado-card').forEach(c=>{
+    const nome=c.dataset.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    c.style.display=nome.includes(term)?'':'none';
+  });
+}
+
+// Filters
+function filterCards(tipo){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.card').forEach(card=>{
+    const p=card.dataset.partido,t=card.dataset.tipo;
+    let show=true;
+    if(tipo==='senador')show=t==='senador';
+    else if(tipo==='deputado')show=t==='deputado';
+    else if(tipo==='pt')show=p==='pt';
+    else if(tipo==='outros')show=p!=='pt';
+    card.style.display=show?'':'none';
+  });
+  const sg=document.getElementById('senadores-grid'),dg=document.getElementById('deputados-grid');
+  sg.style.display=tipo==='deputado'?'none':'';
+  sg.previousElementSibling.style.display=tipo==='deputado'?'none':'';
+  dg.style.display=tipo==='senador'?'none':'';
+  dg.previousElementSibling.style.display=tipo==='senador'?'none':'';
+}
+
+function searchCards(term){
+  term=term.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  document.querySelectorAll('.card').forEach(card=>{
+    const nome=card.dataset.nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    card.style.display=nome.includes(term)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
